@@ -1,0 +1,35 @@
+name: CI
+
+on:
+  push:
+    branches: [main, master]
+  pull_request:
+    branches: [main, master]
+
+jobs:
+  test:
+    name: Test & Vet (${{ matrix.os }})
+    runs-on: ${{ matrix.os }}
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [ubuntu-latest, windows-latest, macos-latest]
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Go
+        uses: actions/setup-go@v5
+        with:
+          go-version: '1.22.x'
+
+      - name: Verify formatting & static analysis
+        run: go vet ./...
+
+      - name: Run unit & integration tests
+        run: go test -v -race -coverprofile=coverage.out ./...
+
+      - name: Build CLI binary & run smoke demo
+        run: |
+          go build -o spriteman ./cmd/spriteman
+          ./spriteman demo

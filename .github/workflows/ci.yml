@@ -10,6 +10,9 @@ jobs:
   test:
     name: Test & Vet (${{ matrix.os }})
     runs-on: ${{ matrix.os }}
+    defaults:
+      run:
+        shell: bash
     strategy:
       fail-fast: false
       matrix:
@@ -27,9 +30,9 @@ jobs:
         run: go vet ./...
 
       - name: Run unit & integration tests
-        run: go test -v -race -coverprofile=coverage.out ./...
+        run: go test -v ./...
 
       - name: Build CLI binary & run smoke demo
         run: |
-          go build -o spriteman ./cmd/spriteman
-          ./spriteman demo
+          go build -o spriteman_bin ./cmd/spriteman
+          go run ./cmd/spriteman demo

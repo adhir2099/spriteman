@@ -1,4 +1,8 @@
-# spriteman
+<p align="center">
+  <img src="assets/banner.png" alt="spriteman 2D Asset Packer CLI" width="700" />
+</p>
+
+# Spriteman
 
 [![Go Reference](https://img.shields.io/badge/go-1.22+-00ADD8?logo=go&logoColor=white)](https://go.dev/)
 [![CI](https://github.com/adhir2099/spriteman/actions/workflows/ci.yml/badge.svg)](https://github.com/adhir2099/spriteman/actions)
@@ -227,4 +231,4 @@ go vet ./...
 
 ## License
 
-Released under the [MIT License](LICENSE) by [Adhir Serrano](https://github.com/adhir2099).
+Released under the [MIT License](LICENSE) by [Adhir2099](https://github.com/adhir2099).

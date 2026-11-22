@@ -6,8 +6,9 @@
 
 [![Go Reference](https://img.shields.io/badge/go-1.22+-00ADD8?logo=go&logoColor=white)](https://go.dev/)
 [![CI](https://github.com/adhir2099/spriteman/actions/workflows/ci.yml/badge.svg)](https://github.com/adhir2099/spriteman/actions)
+[![Release](https://img.shields.io/github/v/release/adhir2099/spriteman?color=7c3aed)](https://github.com/adhir2099/spriteman/releases/latest)
 [![License: MIT](https://img.shields.io/badge/License-MIT-amber.svg)](LICENSE)
-[![Dependencies](https://img.shields.io/badge/dependencies-zero-brightgreen.svg)](#why-spriteman)
+[![Dependencies](https://img.shields.io/badge/dependencies-zero-brightgreen.svg)](#features)
 
 **Fast, zero-dependency 2D Sprite Sheet & Asset Packer CLI written in pure Go**
 
@@ -66,7 +67,8 @@ Your game loads **just 1 single image**, runs at silky-smooth 60+ FPS, and consu
   Sprites:       10 total (9 packed, 1 deduplicated, 10 alpha-trimmed)
   Efficiency:    60.2% density (excl. padding/extrusion)
   Bundle Size:   2.5 KB -> 658 B (completed in 4.82ms)
-  `ASCII visual map`
+
+  ASCII Visual Map:
   ┌────────────────────────────────────────────────┐
   │·DDDDDDDDDDDDDDDDD···AAAAAAAAAAA···GGGGGGGGG····│
   │·DDDDDDDDDDDDDDDDD···AAAAAAAAAAA···GGGGGGGGG····│
@@ -80,6 +82,12 @@ Your game loads **just 1 single image**, runs at silky-smooth 60+ FPS, and consu
   │·IIIIIIIIIIIIIIIII···CCCCCCC····················│
   └────────────────────────────────────────────────┘
 ```
+
+<p align="center">
+  <img src="assets/rpg-atlas-2x.png" alt="Packed RPG Sprite Sheet Output (10 loose sprites in 134x136 px, 658 B)" width="268" />
+  <br />
+  <sub><b>Actual output from <code>spriteman demo</code>:</b> 10 loose sprites packed into a single 134×136 indexed PNG (658 bytes)</sub>
+</p>
 
 ---
 
@@ -100,6 +108,10 @@ Your game loads **just 1 single image**, runs at silky-smooth 60+ FPS, and consu
 ---
 
 ## Installation
+
+### Prebuilt Binaries (Windows, macOS, Linux — No Go Required)
+
+Download the latest archive directly from the [GitHub Releases](https://github.com/adhir2099/spriteman/releases/latest) page and extract `spriteman` into your `PATH`.
 
 ### Via `go install`
 
